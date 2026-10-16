@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autorisation de survol par drone – HUXA</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E1F33">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --nuit:#0E1F33;--or:#F2B544;--or-fonce:#A9690C;--creme:#FBF6EA;
+  --texte:#0E1F33;--texte2:#33465A;--clair:#F4EEDF;--clair2:#C9D3DE;--ligne:#B9AE96;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--creme);color:var(--texte);font-family:var(--sans);font-size:1rem;line-height:1.55}
+h1,h2{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or-fonce);outline-offset:2px;border-radius:3px}
+.entete :focus-visible{outline-color:var(--or)}
+.wrap{width:100%;max-width:820px;margin:0 auto;padding:0 20px}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--clair)}
+.logo b{font-weight:600;letter-spacing:.35em;font-size:.95rem;margin-right:-.35em}
+.logo small{font-size:.8rem;color:var(--clair2);padding-left:10px;margin-left:4px;border-left:1px solid rgba(242,181,68,.4)}
+.entete{background:var(--nuit)}
+.entete .wrap{display:flex;align-items:center;min-height:64px}
+
+.aide{margin-top:28px;padding:16px 18px;border-radius:12px;background:#fff;border:1px solid #EADFC6;color:var(--texte2);font-size:.95rem}
+.aide strong{color:var(--texte)}
+.imprimer{margin-top:14px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 20px;border:0;border-radius:999px;background:var(--nuit);color:#fff;font:600 1rem var(--sans);cursor:pointer}
+.imprimer:hover{background:#1D3A5A}
+
+.doc{margin:28px 0 64px;padding:28px 22px;background:#fff;border:1px solid #EADFC6;border-radius:12px}
+.doc-tete{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:2px solid var(--or)}
+.doc-tete .marque{display:flex;align-items:center;gap:8px;font-weight:600;letter-spacing:.35em;font-size:.9rem}
+.doc-tete .ref{font-size:.85rem;color:var(--texte2);text-align:right}
+h1{font-size:clamp(1.5rem,5.5vw,2rem);margin-top:18px}
+h1 em{font-style:italic;color:var(--or-fonce)}
+h2{font-size:1.1rem;margin:26px 0 10px}
+.doc p,.doc li{color:var(--texte2)}
+.doc p+p{margin-top:8px}
+.doc strong{color:var(--texte);font-weight:600}
+ul.puces{margin:6px 0 0;padding-left:20px}
+ul.puces li+li{margin-top:4px}
+
+.champs{display:grid;gap:12px}
+.champ{display:grid;gap:2px}
+.champ label,.legende{font-size:.85rem;font-weight:500;color:var(--texte2)}
+input[type=text],input[type=email],input[type=tel],input[type=date]{width:100%;min-height:36px;padding:4px 2px;border:0;border-bottom:1.5px solid var(--ligne);background:transparent;font:1rem var(--sans);color:var(--texte);border-radius:0}
+input:focus{outline:none;border-bottom-color:var(--or-fonce);background:#FDF9EF}
+fieldset{border:0;margin:0;padding:0}
+.qualite{margin-top:12px}
+.exemplaires{margin-top:8px}
+.choix{display:grid;gap:8px;margin-top:6px}
+.choix label{display:flex;gap:10px;align-items:flex-start;color:var(--texte);font-size:.95rem}
+.choix input{width:18px;height:18px;margin:3px 0 0;flex:none;accent-color:var(--or-fonce)}
+
+.signatures{display:grid;gap:18px;margin-top:14px}
+.sign{border:1.5px solid var(--ligne);border-radius:8px;padding:10px 12px;min-height:130px}
+.sign p{font-size:.85rem}
+.sign .qui{font-weight:600;color:var(--texte)}
+.pied-doc{margin-top:22px;font-size:.8rem;color:var(--texte2)}
+
+@media (min-width:600px){
+  .wrap{padding:0 32px}
+  .doc{padding:40px 44px}
+  .champs.deux{grid-template-columns:1fr 1fr}
+  .champ.large{grid-column:1 / -1}
+  .signatures{grid-template-columns:1fr 1fr}
+}
+
+@media print{
+  @page{size:A4;margin:9mm 12mm}
+  body{background:#fff;font-size:9.5pt;line-height:1.35}
+  ::placeholder{color:transparent}
+  .entete,.aide,.no-print,.pied-doc{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .doc{margin:0;padding:0;border:0;border-radius:0}
+  h1{font-size:15pt;margin-top:8px}
+  h2{font-size:10.5pt;margin:7px 0 3px;break-after:avoid}
+  .doc-tete{padding-bottom:8px}
+  .doc p+p{margin-top:4px}
+  ul.puces li+li{margin-top:1px}
+  .champs.deux{grid-template-columns:1fr 1fr}
+  .champ.large{grid-column:1 / -1}
+  .champs{gap:3px 14px}
+  .qualite{margin-top:6px}
+  .choix label{line-height:1.3}
+  .exemplaires{margin-top:4px}
+  input[type=text],input[type=email],input[type=tel],input[type=date]{min-height:20px;padding:1px 2px;font-size:9.5pt}
+  .choix{gap:2px}
+  .choix label{font-size:9pt}
+  .choix input{width:14px;height:14px;margin-top:1px}
+  .signatures{grid-template-columns:1fr 1fr;break-inside:avoid}
+  .sign{min-height:26mm;padding:6px 10px}
+  .pied-doc{margin-top:10px}
+  .doc-tete{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="HUXA, conseil solaire — accueil">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="10" fill="none" stroke="#F2B544" stroke-width="1"/><circle cx="11" cy="11" r="6.5" fill="#F2B544"/></svg>
+      <b>HUXA</b><small>Conseil solaire</small>
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="aide">
+    <p><strong>Mode d'emploi.</strong> Remplissez ce formulaire avec le client, à l'écran ou à la main après impression, puis faites-le signer en deux exemplaires. Aucune donnée saisie n'est envoyée ni enregistrée par ce site&nbsp;: tout reste dans votre navigateur.</p>
+    <button type="button" class="imprimer" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>
+      Imprimer ou enregistrer en PDF
+    </button>
+  </div>
+
+  <article class="doc" aria-labelledby="titre-doc">
+    <div class="doc-tete">
+      <div class="marque">
+        <svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="10" fill="none" stroke="#A9690C" stroke-width="1"/><circle cx="11" cy="11" r="6.5" fill="#F2B544"/></svg>
+        HUXA
+      </div>
+      <p class="ref">Michaël Belval — HUXA, entrepreneur individuel<br>SIRET 829 009 349 00020<br>contact@huxa.io · 06 51 91 77 32</p>
+    </div>
+
+    <h1 id="titre-doc">Autorisation de survol par drone <em>et de prise de vues</em></h1>
+
+    <form onsubmit="return false" aria-label="Autorisation de survol par drone">
+      <h2>1. Le client</h2>
+      <div class="champs deux">
+        <div class="champ"><label for="nom">Nom et prénom</label><input type="text" id="nom" autocomplete="off"></div>
+        <div class="champ"><label for="tel">Téléphone</label><input type="tel" id="tel" autocomplete="off"></div>
+        <div class="champ large"><label for="adresse">Adresse du bien survolé</label><input type="text" id="adresse" autocomplete="off"></div>
+        <div class="champ"><label for="mail">E-mail</label><input type="email" id="mail" autocomplete="off"></div>
+        <div class="champ"><label for="date-vol">Date prévue du vol</label><input type="text" id="date-vol" placeholder="jj/mm/aaaa" autocomplete="off"></div>
+      </div>
+      <fieldset class="qualite">
+        <legend class="legende">Agissant en qualité de</legend>
+        <div class="choix">
+          <label><input type="checkbox" name="qualite"> propriétaire du bien</label>
+          <label><input type="checkbox" name="qualite"> occupant du bien, avec l'accord du propriétaire</label>
+        </div>
+      </fieldset>
+
+      <h2>2. L'opérateur du drone</h2>
+      <p><strong>Michaël Belval — HUXA</strong>, exploitant enregistré auprès de la DGAC (AlphaTango) sous le n°&nbsp;FRAhzipu2dnfduqq.</p>
+      <p>Drone DJI Mini 5 Pro de classe C0, enregistré au registre des aéronefs civils circulant sans personne à bord sous le n°&nbsp;UAS-FR-642209, utilisé en catégorie «&nbsp;ouverte&nbsp;» conformément à la réglementation européenne et française. Assurance responsabilité civile&nbsp;: [ASSUREUR ET N° DE CONTRAT À COMPLÉTER].</p>
+
+      <h2>3. Objet</h2>
+      <p>Relevé de la toiture et prises de vues aériennes du bien, dans le cadre de l'étude photovoltaïque réalisée par HUXA, afin d'analyser la toiture et de réaliser une projection visuelle de l'installation envisagée.</p>
+
+      <h2>4. Ce que j'autorise</h2>
+      <div class="choix">
+        <label><input type="checkbox"> le survol de ma propriété par le drone de HUXA, à la date convenue ou à une date ultérieure fixée d'un commun accord&nbsp;;</label>
+        <label><input type="checkbox"> la prise de photos et de vidéos de la toiture et du bâtiment&nbsp;;</label>
+        <label><input type="checkbox"> la transmission de ces images à E-Spark, partenaire installateur, pour le chiffrage de mon projet&nbsp;;</label>
+        <label><input type="checkbox"> <span>facultatif&nbsp;: l'utilisation de ces images, sans mon nom ni mon adresse, pour présenter les réalisations de HUXA.</span></label>
+      </div>
+
+      <h2>5. Engagements de HUXA</h2>
+      <ul class="puces">
+        <li>Le vol n'a lieu que si la réglementation, la zone et la météo le permettent&nbsp;; à défaut, l'étude est réalisée sans drone.</li>
+        <li>Les prises de vues sont cadrées sur le bien du client&nbsp;; aucune personne ni propriété voisine n'est filmée intentionnellement.</li>
+        <li>Les images servent uniquement aux usages autorisés ci-dessus. Les images brutes sont supprimées au plus tard 3&nbsp;mois après la remise de l'étude&nbsp;; celles intégrées au dossier d'étude sont conservées avec lui 5&nbsp;ans après la fin de la prestation, et celles autorisées pour la présentation des réalisations le sont jusqu'au retrait de cette autorisation.</li>
+        <li>Le client peut retirer cette autorisation à tout moment, avant ou après le vol, par simple message à contact@huxa.io&nbsp;; les images sont alors supprimées.</li>
+      </ul>
+
+      <h2>6. Données personnelles</h2>
+      <p>Les informations de ce formulaire et les images sont traitées par HUXA, responsable du traitement, pour réaliser l'étude. Vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition en écrivant à contact@huxa.io, et pouvez adresser une réclamation à la CNIL (cnil.fr).</p>
+      <p>Cette autorisation est gratuite et n'engage le client à aucun achat.</p>
+
+      <h2>7. Signatures</h2>
+      <div class="champs deux">
+        <div class="champ"><label for="lieu">Fait à</label><input type="text" id="lieu" autocomplete="off"></div>
+        <div class="champ"><label for="date-sign">Le</label><input type="text" id="date-sign" placeholder="jj/mm/aaaa" autocomplete="off"></div>
+      </div>
+      <p class="exemplaires">En deux exemplaires, dont un remis au client.</p>
+      <div class="signatures">
+        <div class="sign"><p class="qui">Le client</p><p>Précédé de la mention «&nbsp;Lu et approuvé&nbsp;»</p></div>
+        <div class="sign"><p class="qui">Pour HUXA</p><p>Michaël Belval</p></div>
+      </div>
+    </form>
+
+    <p class="pied-doc">HUXA — Michaël Belval, entrepreneur individuel · SIRET 829 009 349 00020 · solaire.huxa.io</p>
+  </article>
+</main>
+</body>
+</html>
