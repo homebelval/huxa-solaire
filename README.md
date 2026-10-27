@@ -3,17 +3,20 @@
 Landing page statique de l'activité de conseil photovoltaïque de HUXA (préqualification gratuite, analyse de devis, étude et dimensionnement, accompagnement), cible du QR code de la carte de visite. Destinée à être publiée sur **https://solaire.huxa.io** via GitHub Pages.
 
 - HTML/CSS pur, aucune dépendance ni étape de build.
-- Aucun cookie ni traceur publicitaire. Services externes : polices Google Fonts (Fraunces, IBM Plex Sans), Web3Forms (envoi du formulaire de contact par e-mail) et GoatCounter (statistiques de fréquentation, sans cookie).
+- Aucun cookie ni traceur publicitaire. Polices Fraunces et IBM Plex Sans hébergées sur le site (`fonts/`). Services externes : Web3Forms (envoi du formulaire de contact par e-mail) et GoatCounter (statistiques de fréquentation, sans cookie).
 - Illustrations en SVG inline, aucune image bitmap.
 
 ## Fichiers
 
 | Fichier | Rôle |
 | --- | --- |
-| `index.html` | La page d'accueil (CSS inline). Les tarifs se modifient dans le tableau de la section `tarifs`, dans les étiquettes des cartes « Dès … € » et dans les données structurées (`minPrice`) |
+| `index.html` | La page d'accueil (CSS inline). La FAQ (section `faq`) est dupliquée dans les données structurées `FAQPage` en tête de fichier : modifier les deux ensemble. Les tarifs se modifient dans le tableau de la section `tarifs`, dans les étiquettes des cartes « Dès … € » et dans les données structurées (`minPrice`) |
 | `mentions-legales.html` | Mentions légales (LCEN) |
 | `autorisation-drone.html` | Formulaire d'autorisation de survol par drone, à remplir et faire signer (non référencé, imprimable sur une page A4) |
 | `favicon.svg` | Icône du site (le soleil du logo) |
+| `logo.png` | Logo carré pour les données structurées (Google) |
+| `og-image.png` | Image d'aperçu lors du partage d'un lien (WhatsApp, SMS, réseaux sociaux) |
+| `fonts/` | Polices Fraunces et IBM Plex Sans (sous-ensemble latin, licence SIL OFL 1.1) |
 | `CNAME` | Domaine personnalisé pour GitHub Pages |
 | `robots.txt`, `sitemap.xml` | Référencement |
 
