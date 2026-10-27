@@ -3,7 +3,7 @@
 Landing page statique de l'activité de conseil photovoltaïque de HUXA (préqualification gratuite, analyse de devis, étude et dimensionnement, accompagnement), cible du QR code de la carte de visite. Destinée à être publiée sur **https://solaire.huxa.io** via GitHub Pages.
 
 - HTML/CSS pur, aucune dépendance ni étape de build.
-- Aucun cookie ni traceur ; seules les polices Google Fonts (Fraunces, IBM Plex Sans) sont chargées.
+- Aucun cookie ni traceur publicitaire. Services externes : polices Google Fonts (Fraunces, IBM Plex Sans), Web3Forms (envoi du formulaire de contact par e-mail) et GoatCounter (statistiques de fréquentation, sans cookie).
 - Illustrations en SVG inline, aucune image bitmap.
 
 ## Fichiers
@@ -25,6 +25,24 @@ Ouvrir `index.html` dans un navigateur, ou :
 python3 -m http.server 8000
 # puis http://localhost:8000
 ```
+
+## Formulaire de contact (Web3Forms)
+
+Le formulaire envoie les demandes directement par e-mail, sans ouvrir la messagerie du visiteur.
+
+1. Sur https://web3forms.com, saisir `contact@huxa.io` dans « Create your Access Key » : la clé arrive par e-mail.
+2. Dans `index.html`, remplacer `A_COMPLETER` par cette clé (`var CLE_WEB3FORMS="…"`, en bas de page). La clé n'est pas secrète : elle peut figurer dans le code public.
+3. Faire un essai depuis le site en ligne et vérifier la réception (et le dossier spam la première fois).
+
+Tant que la clé vaut `A_COMPLETER`, ou si l'envoi échoue, le formulaire se rabat sur l'ouverture de la messagerie (ancien comportement). Offre gratuite : 250 envois par mois. Les pièces jointes (devis, photos) restent à envoyer par e-mail : le message de confirmation le propose.
+
+## Statistiques de consultation (GoatCounter)
+
+1. Créer un compte gratuit sur https://www.goatcounter.com/signup avec le code **`huxa-solaire`** (le site enverra alors ses données à `https://huxa-solaire.goatcounter.com`). Si ce code n'est pas disponible, en choisir un autre et le remplacer dans `index.html` et `mentions-legales.html` (balise `data-goatcounter` en bas de page).
+2. Dans les réglages du site GoatCounter, cocher éventuellement « Ignore IPs » avec sa propre adresse pour ne pas compter ses visites.
+3. Le tableau de bord (`https://huxa-solaire.goatcounter.com`) affiche pages vues, visiteurs, provenance (QR code, Google…), navigateurs, écrans et pays.
+
+Événements suivis en plus des pages vues : `formulaire-envoye`, `formulaire-erreur`, `clic-telephone`, `clic-mail-devis`, `clic-mail-contact`.
 
 ## À compléter dans `autorisation-drone.html`
 

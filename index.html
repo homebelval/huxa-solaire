@@ -260,6 +260,12 @@ fieldset.champ legend{padding:0}
 .radios input{width:20px;height:20px;accent-color:var(--or-fonce);margin:0}
 .formulaire .btn{width:100%;margin-top:6px}
 .formulaire .petit{font-size:.85rem;color:var(--texte2);margin-top:10px}
+.formulaire .piege{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.formulaire .statut{margin-top:12px;font-size:.95rem;font-weight:500}
+.formulaire .statut:empty{display:none}
+.formulaire .statut.ok{padding:12px 14px;border-radius:10px;background:#E6F0E2;color:#24451C}
+.formulaire .statut.erreur{padding:12px 14px;border-radius:10px;background:#F6E1D8;color:#7A2E14}
+.formulaire .statut a{color:inherit}
 
 /* Pied */
 .pied{background:var(--nuit2);color:var(--clair2);padding:36px 0;font-size:.95rem}
@@ -335,7 +341,7 @@ fieldset.champ legend{padding:0}
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn btn-or btn-petit" href="tel:+33651917732" aria-label="Appeler le 06 51 91 77 32">
+    <a class="btn btn-or btn-petit" href="tel:+33651917732" data-goatcounter-click="clic-telephone" aria-label="Appeler le 06 51 91 77 32">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
       Appeler
     </a>
@@ -357,7 +363,7 @@ fieldset.champ legend{padding:0}
         </div>
         <ul class="rassure">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Premier échange gratuit, à distance</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Ou appelez le&nbsp;<a href="tel:+33651917732">06 51 91 77 32</a></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Ou appelez le&nbsp;<a href="tel:+33651917732" data-goatcounter-click="clic-telephone">06 51 91 77 32</a></li>
         </ul>
       </div>
 
@@ -520,7 +526,7 @@ fieldset.champ legend{padding:0}
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Les différences entre les devis comparés</li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Les questions à poser à l'installateur</li>
           </ul>
-          <a class="btn btn-or" href="mailto:contact@huxa.io?subject=Analyse%20de%20devis%20photovolta%C3%AFque&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20faire%20analyser%20mon%20devis%20photovolta%C3%AFque%20(joint%20%C3%A0%20ce%20message).%0A%0APr%C3%A9nom%20%3A%0ACommune%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20!">Faire analyser mon devis</a>
+          <a class="btn btn-or" data-goatcounter-click="clic-mail-devis" href="mailto:contact@huxa.io?subject=Analyse%20de%20devis%20photovolta%C3%AFque&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20faire%20analyser%20mon%20devis%20photovolta%C3%AFque%20(joint%20%C3%A0%20ce%20message).%0A%0APr%C3%A9nom%20%3A%0ACommune%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20!">Faire analyser mon devis</a>
           <p class="petit">Votre messagerie s'ouvre&nbsp;: joignez simplement votre ou vos devis. Dès 290&nbsp;€ selon la puissance du projet, confirmé avant toute prestation.</p>
         </div>
       </div>
@@ -740,15 +746,15 @@ fieldset.champ legend{padding:0}
       <p class="intro">Le premier échange est gratuit et sans engagement. Il se fait à distance, par téléphone ou par e-mail.</p>
       <div class="contact-grille">
         <div class="coord">
-          <a class="tel" href="tel:+33651917732" aria-label="Appeler le 06 51 91 77 32">06 51 91 77 32</a><br>
-          <a class="mail" href="mailto:contact@huxa.io?subject=Projet%20photovolta%C3%AFque">contact@huxa.io</a>
+          <a class="tel" href="tel:+33651917732" data-goatcounter-click="clic-telephone" aria-label="Appeler le 06 51 91 77 32">06 51 91 77 32</a><br>
+          <a class="mail" data-goatcounter-click="clic-mail-contact" href="mailto:contact@huxa.io?subject=Projet%20photovolta%C3%AFque">contact@huxa.io</a>
           <p class="lieu">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2643F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Basé à Lauris, dans le Luberon. Interventions dans le Vaucluse (84), les Bouches-du-Rhône (13) et les Alpes-de-Haute-Provence (04)&nbsp;: Pertuis, Lourmarin, Aix-en-Provence, Manosque…</span>
           </p>
         </div>
 
-        <form class="formulaire" id="form-projet" action="mailto:contact@huxa.io" method="post" enctype="text/plain" aria-labelledby="titre-form">
+        <form class="formulaire" id="form-projet" action="https://api.web3forms.com/submit" method="post" aria-labelledby="titre-form">
           <h3 id="titre-form">Parler de mon projet</h3>
           <p class="aide">Quelques informations suffisent pour commencer.</p>
           <div class="champs">
@@ -797,9 +803,14 @@ fieldset.champ legend{padding:0}
               <label for="f-message">Votre projet en quelques mots <span class="opt">(facultatif)</span></label>
               <textarea id="f-message" name="Message"></textarea>
             </div>
-            <button type="submit" class="btn btn-nuit">Préparer ma demande par e-mail</button>
+            <div class="piege" aria-hidden="true">
+              <label for="f-botcheck">Ne pas remplir</label>
+              <input type="checkbox" id="f-botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-nuit">Envoyer ma demande</button>
           </div>
-          <p class="petit">Votre messagerie s'ouvre avec votre demande pré-remplie&nbsp;: vous pouvez y joindre votre devis, une facture ou des photos de la toiture avant de l'envoyer. Aucune donnée n'est enregistrée sur ce site.</p>
+          <p class="statut" id="f-statut" role="status" aria-live="polite"></p>
+          <p class="petit">Votre demande est transmise directement à HUXA, qui vous recontacte rapidement. Pour joindre un devis, une facture ou des photos de la toiture, écrivez ensuite à <a href="mailto:contact@huxa.io">contact@huxa.io</a>. Vos informations servent uniquement à répondre à votre demande (voir les <a href="mentions-legales.html#donnees">mentions légales</a>).</p>
         </form>
       </div>
     </div>
@@ -824,11 +835,18 @@ fieldset.champ legend{padding:0}
 <script>
 document.getElementById("annee").textContent=new Date().getFullYear();
 (function(){
+  /* Clé d'accès Web3Forms (https://web3forms.com) : les demandes arrivent par e-mail à l'adresse associée */
+  var CLE_WEB3FORMS="A_COMPLETER";
   var f=document.getElementById("form-projet");
   if(!f)return;
+  var statut=document.getElementById("f-statut");
+  var bouton=f.querySelector("button[type=submit]");
+  var compter=function(nom){
+    if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:nom,title:nom,event:true});
+  };
   f.addEventListener("submit",function(e){
-    if(!f.reportValidity())return;
     e.preventDefault();
+    if(!f.reportValidity())return;
     var v=function(id){return document.getElementById(id).value.trim();};
     var devis=document.getElementById("f-devis-oui").checked;
     var lignes=[
@@ -844,9 +862,51 @@ document.getElementById("annee").textContent=new Date().getFullYear();
     ];
     if(v("f-message"))lignes.push("","Mon projet : "+v("f-message"));
     var sujet=(devis?"Analyse de devis":"Projet photovoltaïque")+" – "+v("f-commune");
-    window.location.href="mailto:contact@huxa.io?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(lignes.join("\n"));
+    var parMail=function(){
+      window.location.href="mailto:contact@huxa.io?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(lignes.join("\n"));
+    };
+    if(CLE_WEB3FORMS==="A_COMPLETER"){parMail();return;}
+    var donnees={
+      access_key:CLE_WEB3FORMS,
+      subject:"[solaire.huxa.io] "+sujet,
+      from_name:v("f-prenom")+" (solaire.huxa.io)",
+      botcheck:document.getElementById("f-botcheck").checked,
+      "Prénom":v("f-prenom"),
+      "Téléphone ou e-mail":v("f-contact"),
+      "Commune":v("f-commune"),
+      "Consommation approximative":v("f-conso")||"non précisée",
+      "Équipements":v("f-equip")||"non précisés",
+      "Puissance envisagée":v("f-puissance"),
+      "Devis déjà reçu":devis?"oui":"non",
+      "Message":v("f-message")||"—"
+    };
+    if(v("f-contact").indexOf("@")>0)donnees.replyto=v("f-contact");
+    bouton.disabled=true;
+    bouton.textContent="Envoi en cours…";
+    statut.className="statut";
+    statut.textContent="";
+    fetch("https://api.web3forms.com/submit",{
+      method:"POST",
+      headers:{"Content-Type":"application/json",Accept:"application/json"},
+      body:JSON.stringify(donnees)
+    }).then(function(r){return r.json();}).then(function(r){
+      if(!r.success)throw new Error(r.message);
+      f.reset();
+      statut.className="statut ok";
+      statut.innerHTML="Merci, votre demande est bien envoyée&nbsp;! HUXA vous recontacte rapidement."+(devis?" Vous pouvez envoyer votre devis à <a href=\"mailto:contact@huxa.io?subject="+encodeURIComponent(sujet)+"\">contact@huxa.io</a>.":"");
+      compter("formulaire-envoye");
+    }).catch(function(){
+      statut.className="statut erreur";
+      statut.innerHTML="L'envoi n'a pas abouti. Vous pouvez <a href=\"#\" id=\"f-repli\">envoyer votre demande par e-mail</a> ou appeler le 06&nbsp;51&nbsp;91&nbsp;77&nbsp;32.";
+      document.getElementById("f-repli").addEventListener("click",function(ev){ev.preventDefault();parMail();});
+      compter("formulaire-erreur");
+    }).then(function(){
+      bouton.disabled=false;
+      bouton.textContent="Envoyer ma demande";
+    });
   });
 })();
 </script>
+<script data-goatcounter="https://huxa-solaire.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
