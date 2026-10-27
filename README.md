@@ -30,11 +30,10 @@ python3 -m http.server 8000
 
 Le formulaire envoie les demandes directement par e-mail, sans ouvrir la messagerie du visiteur.
 
-1. Sur https://web3forms.com, saisir `contact@huxa.io` dans « Create your Access Key » : la clé arrive par e-mail.
-2. Dans `index.html`, remplacer `A_COMPLETER` par cette clé (`var CLE_WEB3FORMS="…"`, en bas de page). La clé n'est pas secrète : elle peut figurer dans le code public.
-3. Faire un essai depuis le site en ligne et vérifier la réception (et le dossier spam la première fois).
+- Compte Web3Forms : `contact@huxa.io` (https://app.web3forms.com), formulaire « Contact solaire.huxa.io ».
+- La clé d'accès est dans `index.html` (`var CLE_WEB3FORMS="…"`, en bas de page). Elle n'est pas secrète : elle peut figurer dans le code public.
 
-Tant que la clé vaut `A_COMPLETER`, ou si l'envoi échoue, le formulaire se rabat sur l'ouverture de la messagerie (ancien comportement). Offre gratuite : 250 envois par mois. Les pièces jointes (devis, photos) restent à envoyer par e-mail : le message de confirmation le propose.
+Si la clé vaut `A_COMPLETER`, ou si l'envoi échoue, le formulaire se rabat sur l'ouverture de la messagerie (ancien comportement). Offre gratuite : 250 envois par mois. Les pièces jointes (devis, photos) restent à envoyer par e-mail : le message de confirmation le propose.
 
 ## Statistiques de consultation (GoatCounter)
 
