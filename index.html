@@ -32,7 +32,7 @@
   "logo": "https://solaire.huxa.io/logo.png",
   "image": "https://solaire.huxa.io/og-image.png",
   "telephone": "+33651917732",
-  "email": "contact@huxa.io",
+  "email": "solaire@huxa.io",
   "address": { "@type": "PostalAddress", "addressLocality": "Lauris", "addressRegion": "Vaucluse", "addressCountry": "FR" },
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Vaucluse" },
@@ -645,7 +645,7 @@ fieldset.champ legend{padding:0}
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Les différences entre les devis comparés</li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2B544" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Les questions à poser à l'installateur</li>
           </ul>
-          <a class="btn btn-or" data-goatcounter-click="clic-mail-devis" href="mailto:contact@huxa.io?subject=Analyse%20de%20devis%20photovolta%C3%AFque&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20faire%20analyser%20mon%20devis%20photovolta%C3%AFque%20(joint%20%C3%A0%20ce%20message).%0A%0APr%C3%A9nom%20%3A%0ACommune%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20!">Faire analyser mon devis</a>
+          <a class="btn btn-or" data-goatcounter-click="clic-mail-devis" href="mailto:solaire@huxa.io?subject=Analyse%20de%20devis%20photovolta%C3%AFque&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20faire%20analyser%20mon%20devis%20photovolta%C3%AFque%20(joint%20%C3%A0%20ce%20message).%0A%0APr%C3%A9nom%20%3A%0ACommune%20%3A%0AT%C3%A9l%C3%A9phone%20%3A%0A%0AMerci%20!">Faire analyser mon devis</a>
           <p class="petit">Votre messagerie s'ouvre&nbsp;: joignez simplement votre ou vos devis. Dès 290&nbsp;€ selon la puissance du projet, confirmé avant toute prestation.</p>
         </div>
       </div>
@@ -920,7 +920,7 @@ fieldset.champ legend{padding:0}
       <div class="contact-grille">
         <div class="coord">
           <a class="tel" href="tel:+33651917732" data-goatcounter-click="clic-telephone" aria-label="Appeler le 06 51 91 77 32">06 51 91 77 32</a><br>
-          <a class="mail" data-goatcounter-click="clic-mail-contact" href="mailto:contact@huxa.io?subject=Projet%20photovolta%C3%AFque">contact@huxa.io</a>
+          <a class="mail" data-goatcounter-click="clic-mail-contact" href="mailto:solaire@huxa.io?subject=Projet%20photovolta%C3%AFque">solaire@huxa.io</a>
           <p class="lieu">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2643F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <span>Basé à Lauris, dans le Luberon. Interventions dans le Vaucluse (84), les Bouches-du-Rhône (13) et les Alpes-de-Haute-Provence (04)&nbsp;: Pertuis, Lourmarin, Aix-en-Provence, Manosque…</span>
@@ -1000,7 +1000,7 @@ fieldset.champ legend{padding:0}
             <button type="submit" class="btn btn-nuit">Envoyer ma demande</button>
           </div>
           <p class="statut" id="f-statut" role="status" aria-live="polite"></p>
-          <p class="petit">Votre demande est transmise directement à HUXA, qui vous recontacte rapidement. Pour joindre un devis, une facture ou des photos de la toiture, écrivez ensuite à <a href="mailto:contact@huxa.io">contact@huxa.io</a>. Vos informations servent uniquement à répondre à votre demande (voir les <a href="mentions-legales.html#donnees">mentions légales</a>).</p>
+          <p class="petit">Votre demande est transmise directement à HUXA, qui vous recontacte rapidement. Pour joindre un devis, une facture ou des photos de la toiture, écrivez ensuite à <a href="mailto:solaire@huxa.io">solaire@huxa.io</a>. Vos informations servent uniquement à répondre à votre demande (voir les <a href="mentions-legales.html#donnees">mentions légales</a>).</p>
         </form>
       </div>
     </div>
@@ -1057,7 +1057,7 @@ document.getElementById("annee").textContent=new Date().getFullYear();
     if(v("f-message"))lignes.push("","Mon projet : "+v("f-message"));
     var sujet=(devis?"Analyse de devis":"Projet photovoltaïque")+" – "+v("f-commune");
     var parMail=function(){
-      window.location.href="mailto:contact@huxa.io?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(lignes.join("\n"));
+      window.location.href="mailto:solaire@huxa.io?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(lignes.join("\n"));
     };
     if(CLE_WEB3FORMS==="A_COMPLETER"){parMail();return;}
     var donnees={
@@ -1087,7 +1087,7 @@ document.getElementById("annee").textContent=new Date().getFullYear();
       if(!r.success)throw new Error(r.message);
       f.reset();
       statut.className="statut ok";
-      statut.innerHTML="Merci, votre demande est bien envoyée&nbsp;! HUXA vous recontacte rapidement."+(devis?" Vous pouvez envoyer votre devis à <a href=\"mailto:contact@huxa.io?subject="+encodeURIComponent(sujet)+"\">contact@huxa.io</a>.":"");
+      statut.innerHTML="Merci, votre demande est bien envoyée&nbsp;! HUXA vous recontacte rapidement."+(devis?" Vous pouvez envoyer votre devis à <a href=\"mailto:solaire@huxa.io?subject="+encodeURIComponent(sujet)+"\">solaire@huxa.io</a>.":"");
       compter("formulaire-envoye");
     }).catch(function(){
       statut.className="statut erreur";
