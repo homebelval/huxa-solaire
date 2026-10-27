@@ -757,6 +757,8 @@ fieldset.champ legend{padding:0}
         <form class="formulaire" id="form-projet" action="https://api.web3forms.com/submit" method="post" aria-labelledby="titre-form">
           <h3 id="titre-form">Parler de mon projet</h3>
           <p class="aide">Quelques informations suffisent pour commencer.</p>
+          <input type="hidden" name="access_key" value="e0026ae4-3084-4423-8422-8220a1208303">
+          <input type="hidden" name="subject" value="[solaire.huxa.io] Nouvelle demande">
           <div class="champs">
             <div class="champ">
               <label for="f-prenom">Prénom</label>
@@ -805,7 +807,7 @@ fieldset.champ legend{padding:0}
             </div>
             <div class="piege" aria-hidden="true">
               <label for="f-botcheck">Ne pas remplir</label>
-              <input type="checkbox" id="f-botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+              <input type="checkbox" id="f-botcheck" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
             </div>
             <button type="submit" class="btn btn-nuit">Envoyer ma demande</button>
           </div>
